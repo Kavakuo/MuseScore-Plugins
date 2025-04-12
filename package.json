@@ -1,0 +1,17 @@
+{
+  "name": "altercolor",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "watch": "node build.mjs watch",
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.2",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,43 @@
+name: Build and Package
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+    - name: Create plugin package
+      run: |
+        mkdir -p plugins
+        cp -r dist plugins/
+        find . -name "*.qml" -exec cp "{}" plugins/ \;
+        find . -name "*.png" -exec cp "{}" plugins/ \;
+        cd plugins
+        zip -r ../plugins.zip .
+      
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: plugins
+        path: plugins.zip
