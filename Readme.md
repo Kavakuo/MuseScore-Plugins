@@ -20,7 +20,7 @@ Restart MuseScore and activate the Plugins.
 
 
 ## Color Same Notes
-A helpful plugin during arranging. It colors notes across different staffs that sound at the same time.
+A helpful plugin during arranging. It colors the same notes across different staffs that sound at the same time.
 
 There is currently a limitation in the MuseScore Extension API regarding notifications when something changed. Therefore, if the pitch of a note is changed the plugin must be executed again.
 
