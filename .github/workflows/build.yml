@@ -37,7 +37,7 @@ jobs:
         zip -r ../plugins.zip .
       
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: plugins
         path: plugins.zip
