@@ -8,6 +8,12 @@ class _State {
 
 const State = new _State()
 
+
+// "export" does not work, qml JS Engine does not understand it.
+// Therefore, the function is assigned to a global variable
+// that is declared by the bundler with the banner feature (see build.mjs).
+// If the function is not assigned to a global variable, the bundled output
+// would be empty, since no exports are defined.
 main = function() {
   let fullScore = curScore.selection.elements.length === 0 || !curScore.selection.isRange
   const startStaff = fullScore ? 0 : curScore.selection.startStaff

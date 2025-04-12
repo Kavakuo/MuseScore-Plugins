@@ -2,6 +2,11 @@ import { Chord } from './Chord'
 import { State, COLORS } from './State'
 
 
+// "export" does not work, qml JS Engine does not understand it.
+// Therefore, the function is assigned to a global variable
+// that is declared by the bundler with the banner feature (see build.mjs).
+// If the function is not assigned to a global variable, the bundled output
+// would be empty, since no exports are defined.
 main = function(reset=false) {
   var fullScore = !curScore.selection.elements.length;
   var cursor = curScore.newCursor();
@@ -10,7 +15,7 @@ main = function(reset=false) {
   curScore.startCmd();
   
   var cont = true;
-  const m = new State()
+  const state = new State()
   while (cont) {
     var segment = cursor.segment;
     console.log("----------")
@@ -23,7 +28,7 @@ main = function(reset=false) {
       if (elem && elem.type == Element.CHORD) {
         const chord = <MuseScore.Chord>elem
 
-        const playingChords = m.playingChordsAt(segment.tick)
+        const playingChords = state.playingChordsAt(segment.tick)
         console.log(`Process staff ${staff} voice ${voice}`)
         // console.log("PlayingChords: " + playingChords.length + "/" + m.chords.length)
         // playingChords.forEach(i => console.log("\t" + i.toString()))
@@ -40,7 +45,7 @@ main = function(reset=false) {
             matchingChords.forEach(i => console.log("\t" + i.toString()))
 
             const colorNotes = matchingChords.map(i => i.note(note.pitch)).concat(note)
-            const color = m.getColor(note.pitch, matchingChords.concat(new Chord(segment.tick, staff, chord)))
+            const color = state.getColor(note.pitch, matchingChords.concat(new Chord(segment.tick, staff, chord)))
             console.log(`Set color ${COLORS.findIndex(i => i == color)} (Pitch: ${note.pitch % 12})`)
 
             for (let i=0; i<colorNotes.length; i++) {
@@ -53,7 +58,7 @@ main = function(reset=false) {
           
         }
 
-        m.chords.push(new Chord(segment.tick, staff, chord))
+        state.chords.push(new Chord(segment.tick, staff, chord))
       }
     }
     
