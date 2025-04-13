@@ -20,11 +20,11 @@ main = function() {
   const endStaff = fullScore ? curScore.staves.length - 1 : curScore.selection.endStaff - 1
 
   const firstSegment = fullScore ? curScore.firstSegment() : getFirstSegmentOfMeasure(curScore.selection.startSegment)
-  const lastSegment = fullScore ? curScore.lastSegment : getLastSegmentOfMeasure(curScore.selection.endSegment)
+  const lastSegment = fullScore ? curScore.lastSegment : getLastSegmentOfMeasure(curScore.selection.endSegment ?? curScore.lastSegment)
 
 
   if (!firstSegment || !lastSegment) {
-    console.log("Error, undefined segments")
+    console.log("Error, undefined segments", firstSegment?.tick, lastSegment?.tick)
     return
   }
 
