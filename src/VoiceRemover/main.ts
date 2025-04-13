@@ -1,4 +1,4 @@
-import { getFirstSegmentOfMeasure, getLastSegmentOfMeasure } from '../utils/utils'
+import { formatTick, getFirstSegmentOfMeasure, getLastSegmentOfMeasure } from '../utils/utils'
 
 class _State {
   public mainVoice: number = 1
@@ -66,16 +66,14 @@ function deleteOtherVoices(tick: number, staffIdx: number, keepVoice: number) {
     if (track == staffIdx * 4 + keepVoice) continue
 
     let segment = cursor.segment
-    let cont = true
-    while (cont && segment.tick < lastMeasureTick) {
+    while (segment && segment.tick < lastMeasureTick) {
       const elem = segment.elementAt(track)
       if (elem && (elem.type == Element.CHORD)) {
-        console.log(`Remove element from staff: ${staffIdx} voice: ${track % 4} tick: ${segment.tick / division / 4}`)
+        console.log(`Remove element from staff: ${staffIdx} voice: ${track % 4} tick: ${formatTick(segment.tick)}`)
         removeElement(elem)
       }
 
-      cont = cursor.next()
-      segment = cursor.segment
+      segment = segment.next!
     }
   }
 
@@ -92,16 +90,14 @@ function hasOtherVoiceInMeasure(tick: number, staffIdx: number) {
     let lastMeasureTick = cursor.measure.lastSegment!.tick
 
     let segment = cursor.segment
-    let cont = true
-    while (cont && segment.tick < lastMeasureTick) {
+    while (segment && segment.tick < lastMeasureTick) {
       const elem = segment.elementAt(track)
       if (elem && (elem.type == Element.CHORD)) {
         console.log(`Found other voice in: ${track % 4} at: ${tick / division / 4}`)
         return true
       }
 
-      cont = cursor.next()
-      segment = cursor.segment
+      segment = segment.next!
     }
   }
 
