@@ -21,10 +21,10 @@ Restart MuseScore and activate the Plugins.
 
 ## Color Same Notes
 A helpful plugin during arranging. It colors the same notes across different staffs that sound at the same time.
+The plugin supports two modes:
+- Color the current selected range once
+- Color the whole score continuously. The note colors are automatically updated once a note's pitch is adjusted. This works as long as the plugin window stays open.
 
-There is currently a limitation in the MuseScore Extension API regarding notifications when something changed. Therefore, if the pitch of a note is changed the plugin must be executed again.
-
-![](_ColorSameNotes.png)
 
 
 ## Voice Remover

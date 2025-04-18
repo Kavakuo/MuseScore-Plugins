@@ -24,7 +24,5 @@ export function getLastSegmentOfMeasure(segment: MuseScore.Segment | null) {
 }
 
 export function formatTick(tick: number) {
-  const cursor = curScore.newCursor()
-  cursor.rewindToTick(tick)
   return `${tick / division} (${tick / division / 4})`
 }

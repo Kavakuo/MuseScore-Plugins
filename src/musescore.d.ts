@@ -119,6 +119,7 @@ namespace MuseScore {
         segment: Segment;
         measure: Measure;
         stringNumber: number;
+        inputStateMode: number;
 
         rewind(mode: RewindMode): void;
         rewindToTick(tick: number): void;
