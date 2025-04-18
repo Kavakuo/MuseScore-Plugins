@@ -25,6 +25,8 @@ The plugin supports two modes:
 - Color the current selected range once
 - Color the whole score continuously. The note colors are automatically updated once a note's pitch is adjusted. This works as long as the plugin window stays open.
 
+https://github.com/user-attachments/assets/ed0c1c78-9d74-4cf0-bf44-073dc234a520
+
 
 
 ## Voice Remover
