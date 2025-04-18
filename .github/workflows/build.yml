@@ -31,11 +31,12 @@ jobs:
       run: |
         mkdir -p plugins
         cp -r dist plugins/
-        find . -name "*.qml" -exec cp "{}" plugins/ \;
-        find . -name "*.png" -exec cp "{}" plugins/ \;
+        cp *.qml plugins
+        cp *.png plugins
+        cp -r components plugins
       
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: plugins
+        name: plugins.zip
         path: ./plugins

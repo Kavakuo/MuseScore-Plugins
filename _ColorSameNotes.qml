@@ -6,7 +6,7 @@ import QtQuick.Window
 import MuseScore 3.0
 
 import "dist/ColorSameNotes/main.js" as Script
-
+import "components" as Components
 
 MuseScore {
     version: "3.5"
@@ -23,6 +23,9 @@ MuseScore {
     property var autoActivated: false
     property var selectedRange: false
 
+    Components.Update {
+
+    }
 
     MessageDialog {
         id: errorDialog
@@ -156,7 +159,6 @@ MuseScore {
     Component.onCompleted: {
         timerSelection.start()
 
-
         mainWindow.Window.visibilityChanged.connect((a) => {
             console.log("visibilityChanged changed", layoutf.Window.visibility)
             if (mainWindow.Window.visibility == 0) {
@@ -179,9 +181,7 @@ MuseScore {
 
     // The onRun action for this plugin.
     onRun: {
-        console.log("hello AlterColor");
-        
-        //applyToNotesInSelection();
+        console.log("hello ColorSameNotes");
     }
 }
 

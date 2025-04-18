@@ -1,10 +1,6 @@
-import { getFirstSegmentOfMeasure, getLastSegmentOfMeasure } from '../utils/utils';
 import { State } from './State'
 
-
 const state = new State()
-
-
 
 // "export" does not work, qml JS Engine does not understand it.
 // Therefore, the function is assigned to a global variable

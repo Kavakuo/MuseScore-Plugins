@@ -5,7 +5,8 @@ import esbuild from "esbuild";
 const options = {
   entryPoints: [
     'src/ColorSameNotes/main.ts',
-    'src/VoiceRemover/main.ts'
+    'src/VoiceRemover/main.ts',
+    "src/utils/update.ts"
   ],
   bundle: true,
   platform: 'neutral',

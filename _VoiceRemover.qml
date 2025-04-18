@@ -7,6 +7,7 @@ import QtQuick.Dialogs
 import MuseScore 3.0
 
 import "dist/VoiceRemover/main.js" as Script
+import "components" as Components
 
 
 MuseScore {
@@ -35,6 +36,10 @@ MuseScore {
         Script.State.alwaysKeepMainVoice = keepMainVoice.checked
         Script.State.mainVoice = parseInt(mainVoice.text) - 1
         return true
+    }
+
+    Components.Update {
+
     }
 
     MessageDialog {
@@ -189,17 +194,12 @@ MuseScore {
             
         }
 
-
-
-
     }
     
-
     
     // The onRun action for this plugin.
     onRun: {
-        console.log("hello AlterColor");
-        //applyToNotesInSelection();
+        console.log("hello VoiceRemover");
     }
 }
 
