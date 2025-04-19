@@ -1,6 +1,6 @@
 
 # Musescore Plugins
-This Repo contains two plugins (only tested with MuseScore 4.5, should work with >= 4.4).
+This Repo contains two plugins (requires >= MuseScore 4.5).
 - [Color Same Notes](#color-same-notes)
 - [Voice Remover](#voice-remover)
 
@@ -11,12 +11,7 @@ Link: https://github.com/Kavakuo/MuseScore-Plugins/releases
 
 
 #### Install
-Copy the plugins folder to the following location for your OS:
-- Windows: `C:\Users\[Your User Name]\Documents\MuseScore4\Plugins\`
-- macOS: `~/Documents/MuseScore4/Plugins/`
-- Linux: `~/Documents/MuseScore4/Plugins`
-
-Restart MuseScore and activate the Plugins.
+Drag & Drop the `.mext` file into MuseScore and activate the plugin inside the Plugin Menu.
 
 
 ## Color Same Notes

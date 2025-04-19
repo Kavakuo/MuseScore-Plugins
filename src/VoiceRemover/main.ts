@@ -1,4 +1,4 @@
-import { formatTick, getFirstSegmentOfMeasure, getLastSegmentOfMeasure } from '../utils/utils'
+import { formatTick, getFirstSegmentOfMeasure, getLastSegmentOfMeasure } from '../lib/utils/utils'
 
 class _State {
   public mainVoice: number = 1

@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+  
 
 jobs:
   build:
@@ -29,14 +30,18 @@ jobs:
 
     - name: Create plugin package
       run: |
-        mkdir -p plugins
-        cp -r dist plugins/
-        cp *.qml plugins
-        cp *.png plugins
-        cp -r components plugins
+        cd dist
+        (cd ColorSameNotes && zip -r ../ColorSameNotes.mext ./*)
+        (cd VoiceRemover && zip -r ../VoiceRemover.mext ./*)
       
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: plugins
-        path: ./plugins
+        name: ColorSameNotes.mext
+        path: ./dist/ColorSameNotes.mext
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: VoiceRemover.mext
+        path: ./dist/VoiceRemover.mext

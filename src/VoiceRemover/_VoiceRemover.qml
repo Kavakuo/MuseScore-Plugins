@@ -6,12 +6,12 @@ import QtQuick.Window
 import QtQuick.Dialogs
 import MuseScore 3.0
 
-import "dist/VoiceRemover/main.js" as Script
-import "components" as Components
+import "main.js" as Script
+import "lib/components" as Components
 
 
 MuseScore {
-    version: "3.5"
+    version: "1.0"
     description: qsTr("Removes all voices inside a staff, except the selected one.")
     title: "Voice Remover"
     categoryCode: ""

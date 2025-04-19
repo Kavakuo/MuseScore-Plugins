@@ -1,4 +1,4 @@
-import info from "../../package.json"
+import info from "../../../package.json"
 
 const localVersion = info.version
 

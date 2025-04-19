@@ -5,8 +5,8 @@ import QtQuick.Layouts
 import QtQuick.Window
 import MuseScore 3.0
 
-import "dist/ColorSameNotes/main.js" as Script
-import "components" as Components
+import "main.js" as Script
+import "lib/components" as Components
 
 MuseScore {
     version: "3.5"

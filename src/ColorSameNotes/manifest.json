@@ -1,0 +1,11 @@
+{
+  "uri": "musescore://extensions/color_same_notes",
+  "type": "form",
+  "title": "Color Same Notes",
+  "version": "1.0.0",
+  "description": "This plugin colors notes across different staffs that sound at the same time.",
+  "category": "composing-arranging-tools",
+  "thumbnail": "_ColorSameNotes.png",
+  "apiversion": 1,
+  "path": "_ColorSameNotes.qml"
+}

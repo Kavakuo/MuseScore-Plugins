@@ -3,9 +3,12 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Window
 import QtQuick.Dialogs
-import MuseScore 3.0
 
-import "../dist/utils/update.js" as Update
+import MuseScore 3.0
+import Muse.UiComponents
+
+import "../utils/update.js" as Update
+
 
 Item {
     id: updateComponent

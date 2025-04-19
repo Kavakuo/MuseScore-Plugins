@@ -1,0 +1,11 @@
+{
+  "uri": "musescore://extensions/voice_remover",
+  "type": "form",
+  "title": "Voice Remover",
+  "version": "1.0.0",
+  "description": "Removes all voices inside a staff, except the selected one.",
+  "category": "",
+  "thumbnail": "_VoiceRemover.png",
+  "apiversion": 1,
+  "path": "_VoiceRemover.qml"
+}

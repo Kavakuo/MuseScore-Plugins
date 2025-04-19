@@ -1,4 +1,4 @@
-import { formatTick, getFirstSegmentOfMeasure, getLastSegmentOfMeasure } from '../utils/utils';
+import { formatTick, getFirstSegmentOfMeasure, getLastSegmentOfMeasure } from '../lib/utils/utils';
 import { Chord } from './Chord';
 import { ColorMetadata } from './ColorMetadata';
 
